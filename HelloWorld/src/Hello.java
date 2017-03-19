@@ -8,10 +8,23 @@ public class Hello {
         String myName = "Valentyna";
         System.out.println("Hello, "+myName+"!");
         float f = 4.5f;
-        Person newPerson = new Person();
+        Person newPerson = new Person("(650)302-7126");
+        System.out.println(newPerson.phoneValidate(newPerson.phone));
     }
 }
 class Person{
     // primitive | protected | public
-    String phone;
+    public String phone;
+    public boolean phoneValidate(String phone){
+        boolean valid = true;
+        String pattern = "\\(\\d{3}\\)\\d{3}\\-\\d{4}";
+        System.out.println("This is from sout "+phone.matches(pattern));
+        if (!phone.matches(pattern)){
+            valid = false;
+        }
+        return valid;
+    };
+    public Person (String phone2){
+        this.phone = phone2;
+    }
 }
