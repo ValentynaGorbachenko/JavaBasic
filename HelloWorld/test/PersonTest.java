@@ -4,8 +4,8 @@ import static org.junit.Assert.*;
 public class PersonTest{
     @Test
     public static void testphoneValidate(){
-        Person newPerson = new Person();
-        boolean result = newPerson.phoneValidate("6503027126");
+        Person newPerson = new Person("6503027126");
+        boolean result = newPerson.phoneValidate(newPerson.phone);
         // assertEquals(true, result);
         assertTrue(result);
         /*
